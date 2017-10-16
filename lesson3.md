@@ -233,7 +233,23 @@ TIP: Make sure to test your code with different values. For example,
 
 If checkBalance equals true and isActive equals false, then Your account is no longer active. should be printed to the console.
 
-![](checking_your_balance_3-5.js)
-
 ![](check-your-balance-flowchart.png)
+
+[Answer](checking_your_balance_3-5.js)
+
+### Quiz 3-6 Ice Cream
+
+Using logical operators, write a series of complex logical expressions that prints only if the following conditions are true:
+
+- if flavor is set to vanilla or chocolate and
+- if vessel is set to cone or bowl and
+- if toppings is set to springkles or peanuts
+
+If the above conditions are true, then print out:
+
+`I'd like two scoops of ___ ice cream in a __ with ___.`
+
+Tips: Make sure to test your code with different values.
+
+[Answer](ice_cream_3-6.js)
 
