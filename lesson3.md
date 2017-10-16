@@ -235,5 +235,5 @@ If checkBalance equals true and isActive equals false, then Your account is no l
 
 [](checking_your_balance.js)
 
-![](check_your_balance_flowchart.png)
+![](check-your-balance-flowchart.png)
 
