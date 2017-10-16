@@ -188,12 +188,12 @@ The `&&` symbol is the logical AND operator and it is used to combine two logica
 
 - returns true
 
-|------|------|-------|-----|
+
 |Operator | Meaning | Example | How it works |
 |----|-----|-----|-----|
 | && | Logical AND | `value1 && value2` | Returns `true` if both `value1` and `value2` evaluate to `true`. |
 | ||  | Logical OR | `value1 || value2` | Returns `true` if either `value1` and `value2` (or even both!) evaluate to `true`.|
 | ! | Logical NOT | `!value1` | Returns the opposite of `value1`. If `value1` is `true`, then `!value1` is `false`. |
-|---|---|----|----|
+
 
 
