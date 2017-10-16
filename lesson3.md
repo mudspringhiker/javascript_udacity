@@ -233,7 +233,7 @@ TIP: Make sure to test your code with different values. For example,
 
 If checkBalance equals true and isActive equals false, then Your account is no longer active. should be printed to the console.
 
-[](checking_your_balance.js)
+[](checking_your_balance_3-5.js)
 
 ![](check-your-balance-flowchart.png)
 
