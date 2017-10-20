@@ -184,6 +184,27 @@ Save your final answer in a variable called solution and print it to the console
 
 [Code](4-7_factorial.js)
 
+## Quiz: Find my seat (4-8)
+
+Write a nested for loop to print out all of the different seat combinations in the theater with 0-25 rows and 0-99 seats each row.
+
+```
+0-0
+0-1
+0-2
+...
+25-99
+```
+
+
+
+
+
+
+
+
+
+
 
 
 
