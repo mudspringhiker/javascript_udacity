@@ -87,3 +87,77 @@ Solid rocket booster ignition and liftoff!
 ```
 
 [Code](4-3_countdown_liftoff.js)
+
+# For Loops
+
+Example:
+```javascipt
+for (var i = 0; i < 6; i = i + 1) {
+	console.log("Printing out i = " + i);
+}
+```
+
+The for loop explicitly forces you to define the start point, stop point, and each step of the loop. In fact, you'll get an Uncaught SyntaxError: Unexpected token ) if you leave out any of the three required pieces.
+
+```javascript
+for ( start; stop; step ) {
+	// do this thing
+}
+```
+
+## Nested Loops
+
+Example:
+```javascript
+for (var x = 0; x < 5; x = x + 1) {
+	for (var y = 0; y < 3; y = y + 1) {
+		console.log(x + "," + y);
+	}
+}
+```
+```
+Prints:
+0, 0
+0, 1
+0, 2
+1, 0
+1, 1
+1, 2
+2, 0
+2, 1
+2, 2
+3, 0
+3, 1
+3, 2
+4, 0
+4, 1
+4, 2
+```
+
+# Increment and decrement
+
+Shortcuts for doing arithmetic:
+
+```
+x++ or ++x // same as x = x + 1 
+x-- or --x // same as x = x - 1
+x += 3 // same as x = x + 3
+x -= 6 // same as x = x - 6
+x *= 2 // same as x = x * 2
+x /= 5 // same as x = x / 5
+```
+
+
+## Quiz: Changing the Loop (4-4)
+
+[Code](4-4_changing_the_loop.js)
+
+
+
+
+
+
+
+
+
+

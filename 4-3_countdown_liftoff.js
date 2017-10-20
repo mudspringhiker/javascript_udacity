@@ -34,9 +34,3 @@ while (time >= 0) {
 	}
 	time = time - 1;
 }
-
-
-
-
-	
-
