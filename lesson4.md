@@ -164,6 +164,17 @@ for (x < 10; x++) {
 
 [Code](4-5_fix_the_error.js)
 
+## Quiz: Fix the error 2 (4-6)
+
+The for loop below has an error. Fix it!
+
+```javascript
+for (var k = 0 k < 200 k+++) {
+	console.log(k);
+}
+```
+
+[Code](4-6_fix_the_error.js)
 
 
 
