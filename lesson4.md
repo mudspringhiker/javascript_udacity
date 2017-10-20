@@ -152,6 +152,17 @@ x /= 5 // same as x = x / 5
 
 [Code](4-4_changing_the_loop.js)
 
+## Quiz: Fix the error 1 (4-5)
+
+Here is a for loop that's supposed to print the numbers 5 through 0. Fix the error!
+
+```javascript
+for (x < 10; x++) {
+	console.log(x);
+}
+```
+
+[Code](4-5_fix_the_error.js)
 
 
 
