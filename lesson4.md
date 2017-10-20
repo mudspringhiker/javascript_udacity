@@ -176,6 +176,16 @@ for (var k = 0 k < 200 k+++) {
 
 [Code](4-6_fix_the_error.js)
 
+## Quiz: Factorials! (4-7)
+
+Write a for loop that prints out the factorial of the number 12:
+
+Save your final answer in a variable called solution and print it to the console.
+
+[Code](4-7_factorial.js)
+
+
+
 
 
 
