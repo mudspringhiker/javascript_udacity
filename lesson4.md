@@ -63,3 +63,27 @@ Note the pluralization of the word "bottle" when you go from 2 bottles to 1 bott
 Your text editor may try to autocorrect your ellipses ... to the ellipses character … Do not use the ellipses character for this quiz.
 
 [Answer](4-2_99_bottles_of_juice.js)
+
+## Quiz: Countdown, Liftoff! (4-3)
+
+Write a while loop that counts down from 60 seconds and:
+- if there's a task to be completed, it prints out the task
+- if there is no task being completed, it prints out the time as T-x seconds
+
+Output should look like:
+```
+T-60 seconds
+T-59 seconds
+T-58 seconds
+...
+T-51 seconds
+Orbiter transfers from ground to internal power
+T-49 seconds
+...
+T-3 seconds
+T-2 seconds
+T-1 seconds
+Solid rocket booster ignition and liftoff!
+```
+
+[Code](4-3_countdown_liftoff.js)

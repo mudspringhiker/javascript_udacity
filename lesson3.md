@@ -282,3 +282,245 @@ If shirtWidth equals 18, shirtLength equals 29 and shirtSleeve equals 8.47, then
 
 [Answer](3-7_what_do_i_wear.js)
 
+# Truthy and Falsy
+
+Every value in JavaScript has an inherent boolean value. When that value is evaluated in the context of a boolean expression, the value will be transformed into that inherent boolean value.
+
+## Falsy values
+
+A value is falsy if it converts to false when evaluated in a boolean context. For example, an empty String "" is falsy because, "" evaluates to false. You already know if...else statements, so let's use them to test the truthy-ness of "".
+```
+if ("") {
+    console.log("the value is truthy");
+} else {
+    console.log("the value is falsy");
+}
+```
+
+Returns: "the value is falsy"
+
+Here’s the list of all of the falsy values:
+- the Boolean value false
+- the null type
+- the undefined type
+- the number 0
+- the empty string ""
+- the odd value NaN (stands for "not a number", check out the NaN MDN article)
+
+That's right, there are only six falsy values in all of JavaScript!
+
+## Truthy values
+A value is truthy if it converts to true when evaluated in a boolean context. For example, the number 1 is truthy because, 1 evaluates to true. Let's use an if...else statement again to test this out:
+
+```
+if (1) {
+    console.log("the value is truthy");
+} else {
+    console.log("the value is falsy");
+}
+```
+Returns: "the value is truthy"
+Here are some other examples of truthy values:
+
+- true
+- 42
+- "pizza"
+- "0"
+- "null"
+- "undefined"
+- {}
+- []
+
+Essentially, if it's not in the list of falsy values, then it's truthy!
+
+# Ternary Operators
+
+Sometimes, you might find yourself with the following type of conditional.
+```
+var isGoing = true;
+var color;
+
+if (isGoing) {
+  color = "green";
+} else {
+  color = "red";
+}
+
+console.log(color);
+```
+
+Prints: "green"
+
+In this example, the variable color is being assigned to either "green" or "red" based on the value of isGoing. This code works, but it’s a rather lengthy way for assigning a value to a variable. Thankfully, in JavaScript there’s another way.
+
+TIP: Using if(isGoing) is the same as using if(isGoing === true). Alternatively, using if(!isGoing) is the same as using if(isGoing === false).
+
+## Ternary operator
+
+The ternary operator provides you with a shortcut alternative for writing lengthy if...else statements.
+```
+conditional ? (if condition is true) : (if condition is false)
+```
+
+To use the ternary operator, first provide a conditional statement on the left-side of the ?. Then, between the ? and : write the code that would run if the condition is true and on the right-hand side of the : write the code that would run if the condition is false. For example, you can rewrite the example code above as:
+
+```
+var isGoing = true;
+var color = isGoing ? "green" : "red";
+console.log(color);
+```
+Prints: "green"
+This code not only replaces the conditional, but it also handles the variable assignment for color.
+
+If you breakdown the code, the condition isGoing is placed on the left side of the ?. Then, the first expression, after the ?, is what will be run if the condition is true and the second expression after the, :, is what will be run if the condition is false.
+
+### Quiz question
+
+What will be printed to the console if the following code is run:
+
+```
+var adult = true;
+var preorder = true;
+
+console.log("It costs $" + (adult ? "40.00" : "20.00") + " to attend the concert. Pick up your tickets at the " + (preorder ? "will call" : "the gate") + ".");
+```
+
+"It will cost $40 to attend the concert. Pick up your tickets at the will call."
+
+# Quiz: Navigating the food chain (3-8)
+
+From the smallest of creatures to the largest of animals, inevitably every living, breathing thing must ingest other organisms to survive. This means that all animals will fall within one of the three consumer-based categories based on the types of food that they eat.
+
+- Animals that eat only plants are called herbivores
+- Animals that eat only other animals are called carnivores
+- Animals that eat both plants and animals are called omnivores
+
+Directions:
+
+Write a series of ternary statements that sets the variable category equal to:
+
+- "herbivore" if an animal eats plants
+- "carnivore" if an animal eats animals
+- "omnivore" if an animal eats plants and animals
+- undefined if an animal doesn't eat plants or animals
+
+Use the eatsPlants and eatsAnimals variables to test your code.
+
+TIP: Make sure to test your code with different values. For example,
+
+If eatsPlants equals true and eatsAnimals equals false, then herbivore should be printed to the console.
+
+[Answer](3-8_navigating_the_food_chain.js)
+
+# Switch Statement
+
+- another way to chain multiple `else if` statements that are based on the same value without using conditional statements. Instead, you just switch which piece of code is run based on a value.
+
+```javascript
+if (option === 1) {
+  console.log("You selected option 1.");
+} else if (option === 2) {
+  console.log("You selected option 2.");
+} else if (option === 3) {
+  console.log("You selected option 3.");
+} else if (option === 4) {
+  console.log("You selected option 4.");
+} else if (option === 5) {
+  console.log("You selected option 5.");
+} else if (option === 6) {
+  console.log("You selected option 6.");
+}
+```
+
+```javascript
+switch (option) {
+  case 1:
+    console.log("You selected option 1.");
+  case 2:
+    console.log("You selected option 2.");
+  case 3:
+    console.log("You selected option 3.");
+
+}
+```
+
+*Falling-through* happens in case where `break` is not used.
+
+Here, falling-throuh is prevented:
+
+```javascript
+switch (option) {
+  case 1:
+    console.log("You selected option 1.");
+    break;
+  case 2:
+    console.log("You selected option 2.");
+    break;
+  case 3:
+    console.log("You selected option 3.");
+    break;
+  case 4:
+    console.log("You selected option 4.");
+    break;
+  case 5:
+    console.log("You selected option 5.");
+}
+```
+
+`break` is not needed in the last case.
+
+Case where falling-through is used:
+
+```javascript
+var tier = "nsfw deck";
+var output = "You'll receive "
+
+switch (tier) {
+  case "deck of legends":
+    output += "a custom card, ";
+  case "collector's deck":
+    output += "a signed version of the Exploding Kittens deck, ";
+  case "nsfw deck":
+    output += "one copy of the NSFW (Not Safe for Work) Exploding Kittens card game and ";
+  default:
+    output += "one copy of the Exploding Kittens card game.";
+}
+
+console.log(output);
+```
+
+Prints: You’ll receive one copy of the NSFW (Not Safe for Work) Exploding Kittens card game and one copy of the Exploding Kittens card game.
+
+Note: You can add a default case to a switch statement and it will be executed when none of the values match the value of the switch expression.
+
+## Quiz: Back to School (3-9)
+
+[Answer](3-9_back_to_school.js)
+
+```
+no high school diploma earned an average of $25,636/year,
+a high school diploma earned an average of $35,256/year,
+an Associate's degree earned an average of $41,496/year,
+a Bachelor's degree earned an average of $59,124/year,
+a Master's degree earned an average of $69,732/year,
+a Professional degree earned an average of $89,960/year,
+and a Doctoral degree earned an average of $84,396/year.
+```
+
+Directions:
+
+Write a switch statement to set the average salary of a person based on their type of completed education.
+
+Afterwards, print the following to the console.
+
+`In 2015, a person with __________ earned an average of __________/year.`
+
+Fill in the blanks with the type of education and the expected average salary. Make sure to use correct grammar in your printed statement. For help, refer to the findings above.
+
+`In 2015, a person with a Bachelor's degree earned an average of $59,124/year.`
+
+TIP: To print out the average salary with commas (i.e. 59,124), use the toLocaleString() method and pass it the locale "en-US". For example, salary.toLocaleString("en-US").
+
+TIP: Make sure to test your code with different values. For example,
+
+If education equals "an Associate's degree", then In 2015, a person with an Associate's degree earned an average of $41,496/year. should be printed to the console.
