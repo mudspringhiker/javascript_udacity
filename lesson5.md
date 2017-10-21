@@ -89,7 +89,11 @@ Declare a function called `laugh()` that returns `"hahahahahahahahahaha!"`. Prin
 
 [Code](5-1_laugh_it_off.js)
 
+## QuizL Laugh it of 2 (5-2)
 
+Write a function `laugh()` that takes one parameter, `num`  that represents the number of "ha"s to return.
+
+[Code](5-2_laugh_it_off.js)
 
 
 
