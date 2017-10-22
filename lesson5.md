@@ -95,16 +95,164 @@ Write a function `laugh()` that takes one parameter, `num`  that represents the 
 
 [Code](5-2_laugh_it_off.js)
 
+# Return Values
 
+```javascript
+function isPrime(integer) {
+	for (var x = 2; x < integer; x++) {
+		if (integer % x === 0) {
+			console.log(integer + " is divisible by " + x);
+		}
+			return false;
+	}
+	return true;
+}
+```
 
+# Scopes
 
+- global scope
+- function scope
 
+# Shadowing / Scope Overwriting
 
+```
+var bookTitle = "Le Petit Prince";
+console.log(bookTitle);
 
+function displayBookEnglish() {
+	bookTitle = "The Little Prince";
+	console.log(bookTitle);
+}
 
+displayBookEnglish();
+console.log(bookTitle);
+```
 
+> "Le Petit Prince"
+> "The Little Prince"
+> "The Little Prince"
 
+--> The variable is replaced by the last assignment
 
+However:
+```
+var bookTitle = "Le Petit Prince";
+console.log(bookTitle);
+
+function displayBookEnglish() {
+	var bookTitle = "The Little Prince";
+	console.log(bookTitle);
+}
+
+displayBookEnglish();
+console.log(bookTitle);
+```
+
+> "Le Petit Prince"
+> "The Little Prince"
+> "Le Petit Prince"
+
+```
+var x = 1;
+
+function addTwo() {
+  x = x + 2;
+}
+
+addTwo();
+x = x + 1;
+console.log(x);
+```
+
+will print out 4.
+
+```
+var x = 1;
+
+function addTwo() {
+  var x = x + 2;
+}
+
+addTwo();
+x = x + 1;
+console.log(x);
+```
+
+will print out 2!
+
+# Using global variables
+
+Using global variables
+So you might be wondering:
+
+"Why wouldn't I always use global variables? Then, I would never need to use function arguments since ALL my functions would have access to EVERYTHING!"
+Well... Global variables might seem like a convenient idea at first, especially when you're writing small scripts and programs, but there are many reasons why you shouldn't use them unless you have to. For instance, global variables can conflict with other global variables of the same name. Once your programs get larger and larger, it'll get harder and harder to keep track and prevent this from happening.
+
+There are also other reasons you'll learn more about in more advanced courses. But for now, just work on minimizing the use of global variables as much as possible.
+
+**What you've learned so far:**
+
+If an identifier is declared in global scope, it's available everywhere.
+If an identifier is declared in function scope, it's available in the function it was declared in (even in functions declared inside the function).
+When trying to access an identifier, the JavaScript Engine will first look in the current function. If it doesn't find anything, it will continue to the next outer function to see if it can find the identifier there. It will keep doing this until it reaches the global scope.
+Global identifiers are a bad idea. They can lead to bad variable names, conflicting variable names, and messy code.
+
+# Hoisting
+
+- calling a function before being declared
+- all function declaration are "hoisted" to the top of their current scope, before any JavaScript is executed
+
+ex:
+
+```javascript
+findAverage(5, 9);
+
+function findAverage(x, y) {
+	var answer = (x + y) / 2;
+	return answer;
+}
+```
+
+-also apply in variable declarations:
+
+```javascript
+function sayGreeting() {
+	console.log(greeting);
+}
+
+sayGreeting();
+```
+
+-- results into error (reference error)
+
+```javascript
+function sayGreeting() {
+  console.log(greeting);
+  var greeting = "hello";
+}
+
+sayGreeting();
+```
+
+--> undefined
+
+```javascript
+function sayGreeting() {
+  var greeting = "hello";
+  console.log(greeting);
+}
+
+sayGreeting();
+```
+
+--> hello
+
+# Quiz: Build a Triangle (5-3)
+
+Create a function called `buildTriangle()` that will accept an input (the triangle at its widest width) and will return the string representation of a triangle. 
+
+[Code](5-3_build_a_triangle.js)
 
 
 
