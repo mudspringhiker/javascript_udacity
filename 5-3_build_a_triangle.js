@@ -15,12 +15,11 @@ function makeLine(length) {
 
 function buildTriangle(base) {
 	triangle = ""
-	for (var i = 0; i < base; i++) {
+	for (var i = 1; i <= base; i++) {
 		triangle += makeLine(i);
 	}
 	return triangle;
 }
-
 
 // test your code by uncommenting the following line
 console.log(buildTriangle(10));
