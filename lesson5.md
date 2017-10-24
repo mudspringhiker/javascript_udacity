@@ -254,6 +254,150 @@ Create a function called `buildTriangle()` that will accept an input (the triang
 
 [Code](5-3_build_a_triangle.js)
 
+# Function Expressions
 
+- when a function is stored inside a variable
 
+```
+var catSays = function(max) {
+	var catMessage = "";
+	for (var = 0; i < max; i++) {
+		catMessage += "meow";
+	}
+	return catMessage;
+};
+```
 
+== the function keyword no longer has a name
+== an anonymous funciton, a function with no name, and it's stored in a variable
+== accessing the value of the variable, the function will get returned back
+
+```
+catSays;
+```
+
+Returns:
+function(max) {
+  var catMessage = ""
+  for (var i = 0; i < max; i++) {
+    catMessage += "meow ";
+  }
+  return catMessage;
+}
+
+## Function expressions and hoisting
+
+Deciding when to use a function expression and when to use a function declaration can depend on a few things, and you will see some ways to use them in the next section. But, one thing you'll want to be careful of, is hoisting.
+
+All function declarations are hoisted and loaded before the script is actually run. Function expressions are not hoisted, since they involve variable assignment, and only variable declarations are hoisted. The function expression will not be loaded until the interpreter reaches it in the script.
+
+# Patterns with Function Expressions
+
+### Functions as parameters
+
+```javascript
+
+// function expression catSays
+var catSays = function(max) {
+	var catMessage = "";
+	for (var i = 0; i < max; i++) {
+		catMessage += "meow";
+	}
+	return catMessage;
+};
+
+// function declaration helloCat accepting a callback
+function helloCat(callbackFunc) {
+	return "Hello " + callbackFunc(3);
+}
+
+// pass in catSays as a callback function
+helloCat(catSays);
+```
+--> "Hello meow meow meow "
+
+Named function expressions
+
+```javascript
+var favoriteMovie = function movie() {
+	return "The Fountain";
+};
+
+favoriteMovie(); // Still return "The Fountain"
+
+movie(); // returns a reference error!
+```
+
+### Inline function expressions
+
+A function expression is when a function is assigned  a variable. 
+
+```javascript
+// Function expression that assigns the function displayFavorite 
+// to the variable favoriteMovie
+
+var favoriteMovie = function displayFavorite(movieName) {
+  console.log("My favorite movie is " + movieName);
+};
+
+// Function declaration that has two parameters: a function for displaying
+// a message, along with a name of a movie
+
+function movies(messageFunction, name) {
+  messageFunction(name);
+}
+
+// Call the movies function, pass in the favoriteMovie function and name of movie
+movies(favoriteMovie, "Finding Nemo");
+```
+--> Returns My favorite movie if Finding Nemo
+
+But you could have bypassed the first assignment of the function, by passing the function to the movies() function inline.
+```
+// Function declaration that takes in two arguments: a function for displaying
+// a message, along with a name of a movie
+function movies(messageFunction, name) {
+  messageFunction(name);
+}
+
+// Call the movies function, pass in the function and name of movie
+movies(function displayFavorite(movieName) {
+  console.log("My favorite movie is " + movieName);
+}, "Finding Nemo");
+```
+Returns: My favorite movie is Finding Nemo
+
+This type of syntax, writing function expressions that pass a function into another function inline, is really common in JavaScript. It can be a little tricky at first, but be patient, keep practicing, and you'll start to get the hang of it!
+
+### Why use anonymous inline function expressions?
+Using an anonymous inline function expression might seem like a very not-useful thing at first. Why define a function that can only be used once and you can't even call it by name?
+
+Anonymous inline function expressions are often used with function callbacks that are probably not going to be reused elsewhere. Yes, you could store the function in a variable, give it a name, and pass it in like you saw in the examples above. However, when you know the function is not going to be reused, it could save you many lines of code to just define it inline.
+
+# Quiz: Laugh (5-4)
+
+Write an anonymous function expression that stores a function in a variable called "laugh" and outputs the number of "ha"s that you pass in as an argument.
+
+laugh(3);
+Returns: hahaha!
+
+[Code](5-4_laugh.js)
+
+# Quiz: Cry (5-5)
+
+Write a named function expression that stores the function in a variable called cry and returns "boohoo!". Don't forget to call the function using the variable name, not the function name:
+
+cry();
+Returns: boohoo!
+
+[Code](5-5_cry.js)
+
+# Quiz: Inline (5-6)
+
+Call the emotions() function so that it prints the output you see below, but instead of passing the laugh() function as an argument, pass an inline function expression instead.
+```
+emotions("happy", laugh(2)); // you can use your laugh function from the previous quizzes
+```
+Prints: "I am happy, haha!"
+
+[Code](5-6_inline.js)
